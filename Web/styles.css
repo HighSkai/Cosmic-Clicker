@@ -18,38 +18,30 @@ body {
     background-color: #222;
     width: 100%;
     flex-direction: row;
-    /* Center elements vertically */
     justify-content: center;
-    /* Center elements horizontally */
     align-items: center;
-    /* Center elements vertically */
+    position: relative;
 }
 
 .buttons-left {
     display: flex;
     flex-direction: column;
-    /* Align the buttons vertically */
     align-items: flex-start;
-    /* Align the buttons to the left */
     margin-right: 30px;
-    /* Add some spacing between the buttons and the content */
     position: absolute;
-    left: 350px;
-    /* Adjust the negative left margin to bring the buttons closer to the center */
+    left: 10px;
+    /* Adjust the left position as needed */
     top: 86px;
 }
 
 .buttons-right {
     display: flex;
     flex-direction: column;
-    /* Align the buttons vertically */
     align-items: flex-start;
-    /* Align the buttons to the left */
     margin-right: 30px;
-    /* Add some spacing between the buttons and the content */
     position: absolute;
-    left: 1400px;
-    /* Adjust the negative left margin to bring the buttons closer to the center */
+    right: 10px;
+    /* Adjust the right position as needed */
     top: 86px;
 }
 
@@ -60,12 +52,39 @@ button {
     padding: 10px 20px;
     font-size: 18px;
     margin: 10px 0;
-    /* Adjust the vertical margin to create space between buttons */
     cursor: pointer;
 }
 
 button:hover {
     background-color: #0056a5;
+}
+
+body.window-open .buttons-left,
+body.window-open .buttons-right {
+    display: none;
+}
+
+/* Restyle the buttons when a window is open */
+body.window-open .buttons-left-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 30px;
+    position: absolute;
+    left: 10px;
+    /* Adjust the left position as needed */
+    top: 86px;
+}
+
+body.window-open .buttons-right-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 30px;
+    position: absolute;
+    right: 10px;
+    /* Adjust the right position as needed */
+    top: 86px;
 }
 
 .close-button {
@@ -83,6 +102,7 @@ button:hover {
 .close-button:hover {
     background-color: #777;
 }
+
 
 .text-box-container {
     display: flex;
@@ -111,7 +131,6 @@ button:hover {
     cursor: text;
 }
 
-
 .resources {
     display: flex;
     margin-bottom: 20px;
@@ -133,54 +152,6 @@ button:hover {
 
 .resource-amount {
     font-size: 18px;
-}
-
-.upgrade-screen {
-    display: none;
-    position: fixed;
-    /* Keep it as "fixed" for overlay effect */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.upgrade-window {
-    background-color: #333;
-    border: 2px solid #555;
-    max-width: 1440px;
-    height: 690px;
-    padding: 20px;
-    text-align: center;
-}
-
-.settings-screen {
-    display: none;
-    position: fixed;
-    /* Keep it as "fixed" for overlay effect */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.settings-window {
-    background-color: #333;
-    border: 2px solid #555;
-    max-width: 1440px;
-    height: 690px;
-    padding: 20px;
-    text-align: center;
 }
 
 .upgrade-multiplier {
@@ -207,28 +178,49 @@ button:hover {
     /* Center the content inside the container */
 }
 
-.moon-screen {
+/* Add a z-index to the main container */
+.container {
     display: flex;
-    align-items: center;
+    max-width: 800px;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #222;
+    width: 100%;
+    flex-direction: row;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    position: relative;
+    /* Add position relative to enable z-index */
+    z-index: 1;
+    /* Set a z-index value */
+}
+
+/* Add a higher z-index to the opened windows */
+.upgrade-screen,
+.settings-screen,
+.moon-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 999;
+    z-index: 9999;
+    /* Set a higher z-index value */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Adjust the z-index of specific windows */
+.upgrade-window,
+.settings-window,
 .moon-window {
     background-color: #333;
     border: 2px solid #555;
     max-width: 800px;
-    /* Adjust this value based on your design */
-    height: 100%;
-    /* Set the height to 100% of the viewport height */
     padding: 20px;
     text-align: center;
-    position: relative;
-    z-index: 1000;
+    z-index: 10000;
+    /* Set a higher z-index value */
 }

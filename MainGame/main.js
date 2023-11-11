@@ -1,4 +1,3 @@
-// Constants
 const elements = {
     fuelAmount: document.getElementById("fuel"),
     energyAmount: document.getElementById("energy"),
@@ -32,7 +31,6 @@ const elements = {
 
 };
 
-// State variables
 let fuel = 0;
 let energy = 0;
 let currency = 0;
@@ -46,10 +44,9 @@ let efficiencyUpgradeCost = 200;
 let efficientEnginesCost = 80;
 let multiClickCost = 120;
 let multiClickChance = 0.1;
-let autoClickRate = 1000; // Default auto-click rate in milliseconds
+let autoClickRate = 1000;
 let autoClickRateUpgradeCost = 300;
 
-// Functions
 function saveUserDataToLocalStorage() {
     const userData = {
         fuel,
@@ -102,7 +99,6 @@ function loadUserDataFromLocalStorage() {
         elements.upgradeAutoClickRateButton.style.backgroundColor = "#888";
     }
 }
-
 
 function deleteUserData() {
     localStorage.removeItem('userData');
@@ -208,34 +204,65 @@ function collectResources() {
 }
 
 function openMoonWindow() {
+    document.body.classList.add('window-open');
     document.querySelector(".content").style.display = "none";
-    elements.moonScreen.style.display = "flex";
+    document.querySelector(".moon-screen").style.display = "flex";
+
+    // Hide other buttons
+    document.querySelector(".buttons-left").style.display = "none";
+    document.querySelector(".buttons-right").style.display = "none";
 }
 
 function closeMoonWindow() {
-    elements.moonScreen.style.display = "none";
-    document.querySelector(".content").style.display = "block";
-}
+    document.body.classList.remove('window-open');
+    document.querySelector(".moon-screen").style.display = "none";
+    document.querySelector(".content").style.display = "flex";
 
-function openSettingsWindow() {
-    document.querySelector(".content").style.display = "none";
-    elements.settingsScreen.style.display = "flex";
-}
-
-function closeSettingsWindow() {
-    elements.settingsScreen.style.display = "none";
-    document.querySelector(".content").style.display = "block";
+    // Show other buttons
+    document.querySelector(".buttons-left").style.display = "flex";
+    document.querySelector(".buttons-right").style.display = "flex";
 }
 
 function openUpgradeWindow() {
+    document.body.classList.add('window-open');
     document.querySelector(".content").style.display = "none";
-    elements.upgradeScreen.style.display = "flex";
+    document.querySelector(".upgrade-screen").style.display = "flex";
+
+    // Hide other buttons
+    document.querySelector(".buttons-left").style.display = "none";
+    document.querySelector(".buttons-right").style.display = "none";
 }
 
 function closeUpgradeWindow() {
-    elements.upgradeScreen.style.display = "none";
-    document.querySelector(".content").style.display = "block";
+    document.body.classList.remove('window-open');
+    document.querySelector(".upgrade-screen").style.display = "none";
+    document.querySelector(".content").style.display = "flex";
+
+    // Show other buttons
+    document.querySelector(".buttons-left").style.display = "flex";
+    document.querySelector(".buttons-right").style.display = "flex";
 }
+
+function openSettingsWindow() {
+    document.body.classList.add('window-open');
+    document.querySelector(".content").style.display = "none";
+    document.querySelector(".settings-screen").style.display = "flex";
+
+    // Hide other buttons
+    document.querySelector(".buttons-left").style.display = "none";
+    document.querySelector(".buttons-right").style.display = "none";
+}
+
+function closeSettingsWindow() {
+    document.body.classList.remove('window-open');
+    document.querySelector(".settings-screen").style.display = "none";
+    document.querySelector(".content").style.display = "flex";
+
+    // Show other buttons
+    document.querySelector(".buttons-left").style.display = "flex";
+    document.querySelector(".buttons-right").style.display = "flex";
+}
+
 
 function upgradeSpeed() {
     if (currency >= speedUpgradeCost) {
