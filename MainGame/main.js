@@ -205,62 +205,54 @@ function collectResources() {
 
 function openMoonWindow() {
     document.body.classList.add('window-open');
+    hideButtons();
     document.querySelector(".content").style.display = "none";
     document.querySelector(".moon-screen").style.display = "flex";
-
-    // Hide other buttons
-    document.querySelector(".buttons-left").style.display = "none";
-    document.querySelector(".buttons-right").style.display = "none";
 }
 
 function closeMoonWindow() {
     document.body.classList.remove('window-open');
+    showButtons();
     document.querySelector(".moon-screen").style.display = "none";
     document.querySelector(".content").style.display = "flex";
-
-    // Show other buttons
-    document.querySelector(".buttons-left").style.display = "flex";
-    document.querySelector(".buttons-right").style.display = "flex";
 }
 
 function openUpgradeWindow() {
     document.body.classList.add('window-open');
+    hideButtons();
     document.querySelector(".content").style.display = "none";
     document.querySelector(".upgrade-screen").style.display = "flex";
-
-    // Hide other buttons
-    document.querySelector(".buttons-left").style.display = "none";
-    document.querySelector(".buttons-right").style.display = "none";
 }
 
 function closeUpgradeWindow() {
     document.body.classList.remove('window-open');
+    showButtons();
     document.querySelector(".upgrade-screen").style.display = "none";
     document.querySelector(".content").style.display = "flex";
-
-    // Show other buttons
-    document.querySelector(".buttons-left").style.display = "flex";
-    document.querySelector(".buttons-right").style.display = "flex";
 }
 
 function openSettingsWindow() {
     document.body.classList.add('window-open');
+    hideButtons();
     document.querySelector(".content").style.display = "none";
     document.querySelector(".settings-screen").style.display = "flex";
-
-    // Hide other buttons
-    document.querySelector(".buttons-left").style.display = "none";
-    document.querySelector(".buttons-right").style.display = "none";
 }
 
 function closeSettingsWindow() {
     document.body.classList.remove('window-open');
+    showButtons();
     document.querySelector(".settings-screen").style.display = "none";
     document.querySelector(".content").style.display = "flex";
+}
 
-    // Show other buttons
-    document.querySelector(".buttons-left").style.display = "flex";
-    document.querySelector(".buttons-right").style.display = "flex";
+function hideButtons() {
+    document.querySelector(".buttons-left").style.visibility = "hidden";
+    document.querySelector(".buttons-right").style.visibility = "hidden";
+}
+
+function showButtons() {
+    document.querySelector(".buttons-left").style.visibility = "visible";
+    document.querySelector(".buttons-right").style.visibility = "visible";
 }
 
 
