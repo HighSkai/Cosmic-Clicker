@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    padding: 20px;
+    border: 2px solid #333;
+    background-color: #222;
+    width: 100%;
+    flex-direction: row;
+    /* Center elements vertically */
+    justify-content: center;
+    /* Center elements horizontally */
+    align-items: center;
+    /* Center elements vertically */
+}
+
+.buttons-left {
+    display: flex;
+    flex-direction: column;
+    /* Align the buttons vertically */
+    align-items: flex-start;
+    /* Align the buttons to the left */
+    margin-right: 30px;
+    /* Add some spacing between the buttons and the content */
+    position: absolute;
+    left: 350px;
+    /* Adjust the negative left margin to bring the buttons closer to the center */
+    top: 86px;
+}
+
+.buttons-right {
+    display: flex;
+    flex-direction: column;
+    /* Align the buttons vertically */
+    align-items: flex-start;
+    /* Align the buttons to the left */
+    margin-right: 30px;
+    /* Add some spacing between the buttons and the content */
+    position: absolute;
+    left: 1400px;
+    /* Adjust the negative left margin to bring the buttons closer to the center */
+    top: 86px;
+}
+
+button {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px 0;
+    /* Adjust the vertical margin to create space between buttons */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056a5;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #777;
+}
+
+.text-box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-box {
+    background-color: #555;
+    color: #ffffff;
+    border: none;
+    max-width: 600px;
+    height: 125px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: text;
+}
+
+.text-box2 {
+    background-color: #555;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px 0;
+    cursor: text;
+}
+
+
+.resources {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-around;
+    /* Spread the resources evenly */
+    align-items: center;
+    /* Center resources vertically */
+}
+
+.resource {
+    margin: 10px;
+    display: inline-block;
+}
+
+.resource-name {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.resource-amount {
+    font-size: 18px;
+}
+
+.upgrade-screen {
+    display: none;
+    position: fixed;
+    /* Keep it as "fixed" for overlay effect */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.upgrade-window {
+    background-color: #333;
+    border: 2px solid #555;
+    max-width: 1440px;
+    height: 690px;
+    padding: 20px;
+    text-align: center;
+}
+
+.settings-screen {
+    display: none;
+    position: fixed;
+    /* Keep it as "fixed" for overlay effect */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-window {
+    background-color: #333;
+    border: 2px solid #555;
+    max-width: 1440px;
+    height: 690px;
+    padding: 20px;
+    text-align: center;
+}
+
+.upgrade-multiplier {
+    color: #66ff66;
+    font-size: 14px;
+}
+
+.upgrade-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.upgrade-option {
+    flex: 0 1 30%;
+    /* Adjust the width of each option as needed */
+    margin: 10px;
+    text-align: center;
+}
+
+.content {
+    /* Add other existing styles for the content */
+    text-align: center;
+    /* Center the content inside the container */
+}
+
+.moon-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+}
+
+.moon-window {
+    background-color: #333;
+    border: 2px solid #555;
+    max-width: 800px;
+    /* Adjust this value based on your design */
+    height: 100%;
+    /* Set the height to 100% of the viewport height */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
