@@ -37,7 +37,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-left: -1470px;
+    margin-left: 0px;
     /* Push the container to the right */
     margin-top: -670px;
 }
@@ -85,6 +85,13 @@ body {
     /* Set height to full viewport height */
 }
 
+#resources2 {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    justify-content: center;
+}
+
 #currency,
 #fuel,
 #energy {
@@ -106,7 +113,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 155px;
+    margin-top: 405px;
     margin-left: 465px;
 }
 
