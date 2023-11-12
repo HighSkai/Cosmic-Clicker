@@ -67,38 +67,37 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Your existing game logic goes here...
-    let score = 0;
-    let clickValue = 1;
+    let fuel = 0;
+    let energy = 0;
+    let currency = 0;
+    let fuelClickVal = 5;
+    let enerClickVal = 2;
+    let currClickVal = 1;
 
-    const scoreElement = document.getElementById('score');
+    const currencyElement = document.getElementById('currency');
+    const fuelElement = document.getElementById('fuel');
+    const energyElement = document.getElementById('energy');
     const clickBtn = document.getElementById('clickBtn');
     const upgradeBtn = document.getElementById('upgradeBtn');
-    const upgradeInfo = document.getElementById('upgradeInfo');
 
     clickBtn.addEventListener('click', () => {
-        score += clickValue;
-        updateScore();
+        fuel += fuelClickVal;
+        energy += enerClickVal;
+        currency += currClickVal;
+        updateResources();
     });
 
     upgradeBtn.addEventListener('click', () => {
-        if (score >= 10) {
-            score -= 10;
+        if (currency >= 10) {
+            currency -= 10;
             clickValue += 1;
-            updateScore();
-            showUpgradeInfo(`Click value upgraded to ${clickValue}`);
-        } else {
-            showUpgradeInfo('Not enough points to upgrade!');
+            updateResources();
         }
     });
 
-    function updateScore() {
-        scoreElement.textContent = score;
-    }
-
-    function showUpgradeInfo(message) {
-        upgradeInfo.textContent = message;
-        setTimeout(() => {
-            upgradeInfo.textContent = '';
-        }, 2000);
+    function updateResources() {
+        currencyElement.textContent = `Currency: ${currency}`;
+        fuelElement.textContent = `Fuel: ${fuel}`;
+        energyElement.textContent = `Energy: ${energy}`;
     }
 });

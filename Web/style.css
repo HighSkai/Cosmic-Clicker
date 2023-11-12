@@ -24,11 +24,38 @@ body {
     justify-content: space-between;
 }
 
-
-.inline-text {
-    margin: 0 20px;
-    display: inline;
+.info-text {
+    background-color: #1f1f1f;
+    /* Choose your desired background color */
+    padding: 10px;
+    /* Add padding for some spacing around the text */
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Add a border for better visibility */
+    margin-bottom: 15px;
+    /* Adjust margin for spacing between elements */
 }
+
+#resources {
+    display: flex;
+    gap: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* Add this line to center horizontally */
+    height: 100vh;
+    /* Set height to full viewport height */
+}
+
+#currency,
+#fuel,
+#energy {
+    margin-bottom: 20px;
+    /* Adjust this value for reduced spacing */
+    margin-right: 10px;
+}
+
 
 #center-container {
     display: flex;
@@ -45,6 +72,22 @@ body {
     margin-top: 130px;
     margin-left: 465px;
 }
+
+#upgrade-buttons {
+    display: flex;
+    position: absolute;
+    margin-top: 130px;
+    gap: 30px;
+}
+
+.upgrade-row {
+    display: flex;
+    gap: 10px;
+    /* Adjust this value to set the desired spacing between buttons in the same row */
+    margin-top: 10px;
+    /* Adjust this value to set the desired spacing between rows */
+}
+
 
 button {
     margin: 5px;
@@ -73,6 +116,6 @@ button:hover {
     max-width: 70%;
 }
 
-#score {
+#currency {
     margin-bottom: 20px;
 }
