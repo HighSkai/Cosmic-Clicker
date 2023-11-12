@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cosmic Clicker</title>
+</head>
+
+<body>
+    <div id="main-window" class="game-container">
+        <h1 id="title">Cosmic Clicker</h1>
+        <div class="inline-text" id="score">Score: 0</div>
+        <div class="inline-text" id="fuel">Fuel: 0</div>
+        <div class="inline-text" id="energy">Energy: 0</div>
+        <div id="center-container">
+            <img src="spaceship.png" alt="Spaceship" id="spaceship">
+            <button id="clickBtn">Click me!</button>
+        </div>
+        <div id="left-buttons">
+            <button id="settingsBtn">Settings</button>
+            <button id="upgradesBtn">Upgrades</button>
+            <button id="travelBtn">Travel</button>
+            <button id="upgradeBtn">Upgrade (+10)</button>
+        </div>
+    </div>
+
+    <div id="settings-window" class="game-container">
+        <h2>Settings</h2>
+        <button id="closeSettingsBtn">Close</button>
+    </div>
+
+    <div id="upgrades-window" class="game-container">
+        <h2>Upgrades</h2>
+        <button id="closeUpgradesBtn">Close</button>
+    </div>
+
+    <div id="travel-window" class="game-container">
+        <h2>Travel</h2>
+        <button id="closeTravelBtn">Close</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
