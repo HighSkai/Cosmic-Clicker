@@ -67,37 +67,57 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Your existing game logic goes here...
+    let autoClickInterval = 1000;
+
     let fuel = 0;
     let energy = 0;
     let currency = 0;
     let fuelClickVal = 5;
     let enerClickVal = 2;
     let currClickVal = 1;
+    let fuelMulti = 1;
+    let enerMulti = 1;
+    let currMulti = 1;
 
     const currencyElement = document.getElementById('currency');
     const fuelElement = document.getElementById('fuel');
     const energyElement = document.getElementById('energy');
     const clickBtn = document.getElementById('clickBtn');
-    const upgradeBtn = document.getElementById('upgradeBtn');
+    const currMultiBtn = document.getElementById('currMultiBtn');
+    const autoClickBtn = document.getElementById('autoClickBtn');
 
     clickBtn.addEventListener('click', () => {
-        fuel += fuelClickVal;
-        energy += enerClickVal;
-        currency += currClickVal;
+        fuel += fuelClickVal * fuelMulti;
+        energy += enerClickVal * enerMulti;
+        currency += currClickVal * currMulti;
         updateResources();
     });
 
-    upgradeBtn.addEventListener('click', () => {
-        if (currency >= 10) {
-            currency -= 10;
-            clickValue += 1;
+    currMultiBtn.addEventListener('click', () => {
+        if (currency >= 100) {
+            currency -= 100;
+            currMulti += .5;
             updateResources();
         }
     });
 
+    autoClickBtn.addEventListener('click', () => {
+        if (currency >= 1000) {
+            currency -= 1000;
+            autoClick();
+            updateResources();
+        }
+    });
+
+    function autoClick() {
+        autoClickInterval = setInterval(() => {
+            clickBtn.click();
+        }, 1000);
+    }
+
     function updateResources() {
-        currencyElement.textContent = `Currency: ${currency}`;
-        fuelElement.textContent = `Fuel: ${fuel}`;
-        energyElement.textContent = `Energy: ${energy}`;
+        currencyElement.textContent = `Currency: ${currency.toFixed(1)}`;
+        fuelElement.textContent = `Fuel: ${fuel.toFixed(1)}`;
+        energyElement.textContent = `Energy: ${energy.toFixed(1)}`;
     }
 });
