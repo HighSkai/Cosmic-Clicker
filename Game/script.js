@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currMulti = 1;
 
     //upgrade costs
-
+    let autoClickInterval = 1000;
 
     let currMultiUpgrade = 100;
     let autoClickUpgrade = 1000;
@@ -126,10 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let fuelCap = 250000;
     let enerCap = 100000;
-
-    let currMultiPrice = 1000;
-
-    currMultiPrice = document.getElementById('currMultiPrice')
 
     const currencyElement = document.getElementById('currency');
     const fuelElement = document.getElementById('fuel');
@@ -164,12 +160,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currency >= currMultiUpgrade) {
             currency -= currMultiUpgrade;
             currMultiUpgrade *= 1.2;
-            currMulti += .5;
+            currMulti += 0.5;
             updateWindowValues(upgradesContainer);
             updateResources();
 
+            // Update the display of the currency multiplier
+            const currMultiDisplay = document.getElementById('currMulti');
+            const currMultiBtnText = document.getElementById('currMultiBtn');
+
+            currMultiBtnText.textContent = `Currency Multiplier: (${currMultiUpgrade.toFixed(0)})`;
+            currMultiDisplay.textContent = `Multiplier: ${currMulti.toFixed(1)}x`;
         }
     });
+
 
     autoClickBtn.addEventListener('click', () => {
         if (currency >= 1000) {
@@ -181,12 +184,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     autoClickRateBtn.addEventListener('click', () => {
-        if (currency >= autoClickRateUpgrade) {
+        if (currency >= autoClickRateUpgrade && autoClickInterval - 100 >= 0) {
             currency -= autoClickRateUpgrade;
-            autoClickRateUpgrade *= 1.9;
+            autoClickRateUpgrade *= 2;
             autoClickInterval -= 100;
             updateWindowValues(upgradesContainer);
             updateResources();
+
+            // Update the display of the upgrade price
+            const autoClickRateBtnText = document.getElementById('autoClickRateBtn');
+            const autoClickIntervalText = document.getElementById('autoClickInterval');
+
+            autoClickRateBtnText.textContent = `Auto Click Rate: (${autoClickRateUpgrade.toFixed(0)})`;
+            autoClickIntervalText.textContent = `Auto Click Interval: ${autoClickInterval}ms`;
         }
     });
 
@@ -205,6 +215,10 @@ document.addEventListener('DOMContentLoaded', function () {
             fuelMulti *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
+
+            // Update the display of the upgrade price
+            const fuelEffBtnText = document.getElementById('fuelEffBtn');
+            fuelEffBtnText.textContent = `Fuel Efficiency: (${fuelEffUpgrade.toFixed(0)})`;
         }
     });
 
@@ -215,6 +229,10 @@ document.addEventListener('DOMContentLoaded', function () {
             fuelCap *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
+
+            // Update the display of the upgrade price
+            const fuelCapBtnText = document.getElementById('fuelCapBtn');
+            fuelCapBtnText.textContent = `Fuel Capacity: (${fuelCapUpgrade.toFixed(0)})`;
         }
     });
 
@@ -225,6 +243,10 @@ document.addEventListener('DOMContentLoaded', function () {
             enerMulti *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
+
+            // Update the display of the upgrade price
+            const enerEffBtnText = document.getElementById('enerEffBtn');
+            enerEffBtnText.textContent = `Energy Efficiency: (${enerEffUpgrade.toFixed(0)})`;
         }
     });
 
@@ -235,6 +257,10 @@ document.addEventListener('DOMContentLoaded', function () {
             enerCap *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
+
+            // Update the display of the upgrade price
+            const enerCapBtnText = document.getElementById('enerCapBtn');
+            enerCapBtnText.textContent = `Energy Capacity: (${enerCapUpgrade.toFixed(0)})`;
         }
     });
 
