@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
     mainContainer.style.display = 'flex';
 
     settingsBtn.addEventListener('click', () => {
-        updateWindowValues(settingsContainer);
         showWindow(settingsContainer);
     });
 
@@ -87,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateWindowValues(container) {
         // Update values in the specified container
+        console.log('Currency:', currency);
+        console.log('Fuel:', fuel);
+        console.log('Energy:', energy);
+
         const currencyElement = container.querySelector('#currency');
         const fuelElement = container.querySelector('#fuel');
         const energyElement = container.querySelector('#energy');
@@ -111,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //upgrade costs
     let currMultiUpgrade = 100;
     let autoClickUpgrade = 1000;
-    let autoClick = false;
     let autoClickRateUpgrade = 500;
 
     let fuelEffUpgrade = 50;
@@ -123,9 +125,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const currencyElement = document.getElementById('currency');
     const fuelElement = document.getElementById('fuel');
     const energyElement = document.getElementById('energy');
+
     const clickBtn = document.getElementById('clickBtn');
+
     const currMultiBtn = document.getElementById('currMultiBtn');
     const autoClickBtn = document.getElementById('autoClickBtn');
+    const autoClickRateBtn = document.getElementById('autoClickRateBtn');
+    const pwrEnginesBtn = document.getElementById('pwrEnginesBtn');
+
+    const fuelEffBtn = document.getElementById('fuelEffBtn');
+    const fuelCapBtn = document.getElementById('fuelCapBtn');
+    const enerEffBtn = document.getElementById('enerEffBtn');
+    const enerCapBtn = document.getElementById('enerCapBtn');
 
     giveBtn.addEventListener('click', () => {
         giveResources();
@@ -154,11 +165,29 @@ document.addEventListener('DOMContentLoaded', function () {
     autoClickBtn.addEventListener('click', () => {
         if (currency >= 1000) {
             currency -= 1000;
-            autoClick = true;
             autoClick();
             updateResources();
         }
     });
+
+    autoClickRateBtn.addEventListener('click', () => {
+    });
+
+    pwrEnginesBtn.addEventListener('click', () => {
+    });
+
+    fuelEffBtn.addEventListener('click', () => {
+    });
+
+    fuelCapBtn.addEventListener('click', () => {
+    });
+
+    enerEffBtn.addEventListener('click', () => {
+    });
+
+    enerCapBtn.addEventListener('click', () => {
+    });
+
     //----------------------------------------------------------------
 
 
