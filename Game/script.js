@@ -124,6 +124,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let enerEffUpgrade = 50;
     let enerCapUpgrade = 100;
 
+    let fuelCap = 250000;
+    let enerCap = 100000;
+
+    let currMultiPrice = 1000;
+
+    currMultiPrice = document.getElementById('currMultiPrice')
+
     const currencyElement = document.getElementById('currency');
     const fuelElement = document.getElementById('fuel');
     const energyElement = document.getElementById('energy');
@@ -176,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
     autoClickRateBtn.addEventListener('click', () => {
         if (currency >= autoClickRateUpgrade) {
             currency -= autoClickRateUpgrade;
-            autoClickRateUpgrade *= .9;
+            autoClickRateUpgrade *= 1.9;
             autoClickInterval -= 100;
             updateWindowValues(upgradesContainer);
             updateResources();
@@ -194,6 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fuelEffBtn.addEventListener('click', () => {
         if (currency >= fuelEffUpgrade) {
             currency -= fuelEffUpgrade;
+            fuelEffUpgrade *= 1.5;
+            fuelMulti *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
         }
@@ -202,6 +211,8 @@ document.addEventListener('DOMContentLoaded', function () {
     fuelCapBtn.addEventListener('click', () => {
         if (currency >= fuelCapUpgrade) {
             currency -= fuelCapUpgrade;
+            fuelCapUpgrade *= 1.5;
+            fuelCap *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
         }
@@ -210,6 +221,8 @@ document.addEventListener('DOMContentLoaded', function () {
     enerEffBtn.addEventListener('click', () => {
         if (currency >= enerEffUpgrade) {
             currency -= enerEffUpgrade;
+            enerEffUpgrade *= 1.5;
+            enerMulti *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
         }
@@ -218,6 +231,8 @@ document.addEventListener('DOMContentLoaded', function () {
     enerCapBtn.addEventListener('click', () => {
         if (currency >= enerCapUpgrade) {
             currency -= enerCapUpgrade;
+            enerCapUpgrade *= 1.5;
+            enerCap *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
         }
