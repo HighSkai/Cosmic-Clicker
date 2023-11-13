@@ -61,6 +61,19 @@ body {
     /* Adjust the top margin as needed */
 }
 
+.resource-container {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .info-text {
     background-color: #1f1f1f;
     /* Choose your desired background color */
@@ -72,6 +85,7 @@ body {
     /* Add a border for better visibility */
     margin-bottom: 15px;
     /* Adjust margin for spacing between elements */
+    font-size: 20px;
 }
 
 #resources {
@@ -80,12 +94,12 @@ body {
     width: 100%;
     align-items: center;
     justify-content: center;
-    /* Add this line to center horizontally */
     height: 100vh;
-    /* Set height to full viewport height */
+    font-size: 25px;
 }
 
 #resources2 {
+    font-size: 25px;
     display: flex;
     gap: 100px;
     width: 100%;
@@ -96,8 +110,8 @@ body {
 #fuel,
 #energy {
     margin-bottom: 20px;
-    /* Adjust this value for reduced spacing */
     margin-right: 10px;
+    margin-top: 30px;
 }
 
 
@@ -149,9 +163,24 @@ button:hover {
     background-color: #1565c0;
 }
 
-#upgradeInfo {
-    font-size: 12px;
+.upgrade-info {
+    text-align: center;
+    margin-top: 10px;
     color: #ccc;
+    /* Adjust the color as needed */
+}
+
+.upgrade-info p {
+    margin: 5px 0;
+}
+
+.upgrade-option {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 0 1 30%;
+    margin: 10px;
+    text-align: center;
 }
 
 #spaceship {

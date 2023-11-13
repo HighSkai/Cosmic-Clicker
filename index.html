@@ -12,9 +12,11 @@
     <div id="main-window" class="game-container">
         <h1 id="title">Cosmic Clicker</h1>
         <div class="inline-text" id="resources">
-            <div id="currency">Currency: 0</div>
-            <div id="fuel">Fuel: 0</div>
-            <div id="energy">Energy: 0</div>
+            <div class="resource-container">
+                <div id="currency">Currency: 0</div>
+                <div id="fuel">Fuel: 0</div>
+                <div id="energy">Energy: 0</div>
+            </div>
         </div>
 
         <div id="center-container">
@@ -26,15 +28,19 @@
             <button id="settingsBtn">Settings</button>
             <button id="upgradesBtn">Upgrades</button>
             <button id="travelBtn">Travel</button>
+            <button id="rebirthBtn">Rebrith</button>
+            <button id="giveBtn">Give Resources</button>
         </div>
         <div>
             <div class="stat-container">
                 <h1> Stats </h1>
-                <p>Stat 1: </p>
-                <p>Stat 2: </p>
-                <p>Stat 3: </p>
-                <p>Stat 4: </p>
-                <p>Stat 5: </p>
+                <h2>Multipliers</h2>
+                <p>Currency: 1x</p>
+
+                <h2>Efficiencies</h2>
+                <p>Fuel: 1x</p>
+                <p>Energy: 1x</p>
+                <p>Currency: 1x</p>
             </div>
 
             <div class="idk-container">
@@ -65,22 +71,47 @@
     <div id="upgrades-window" class="game-container">
         <h2>Upgrades</h2>
         <div class="inline-text" id="resources2">
-            <div id="currency">Currency: 0</div>
-            <div id="fuel">Fuel: 0</div>
-            <div id="energy">Energy: 0</div>
+            <div class="resource-container">
+                <div id="currency">Currency: 0</div>
+                <div id="fuel">Fuel: 0</div>
+                <div id="energy">Energy: 0</div>
+            </div>
         </div>
         <div class="upgrade-row">
-            <button id="currMultiBtn">Currency Multiplier: (100)</button>
-            <div></div>
-            <button id="autoClickBtn">Auto Clicker: (1000)</button>
-            <button id="upgradeBtn3">Auto Click Rate: ()</button>
-            <button id="upgradeBtn4">Powerful Engines: ()</button>
+            <div class="upgrade-option">
+                <button id="currMultiBtn">Currency Multiplier: (100)</button>
+                <div id="currMulti">Multiplier: 1</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="autoClickBtn">Auto Clicker: (1000)</button>
+                <div id="autoClicker">keepertext11</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="upgradeBtn3">Auto Click Rate: (500)</button>
+                <div id="autoClickRate">keepertext</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="upgradeBtn4">Powerful Engines: (100,000)</button>
+                <div id="pwrEngines">keepertext</div>
+            </div>
         </div>
         <div class="upgrade-row">
-            <button id="upgradeBtn5">Fuel Efficiency: ()</button>
-            <button id="upgradeBtn6">Fuel Capacity: ()</button>
-            <button id="upgradeBtn7">Energy Efficiency: ()</button>
-            <button id="upgradeBtn8">Energy Capacity: ()</button>
+            <div class="upgrade-option">
+                <button id="fuelEffBtn">Fuel Efficiency: (100)</button>
+                <div id="fuelEff">keepertext</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="fuelCapBtn">Fuel Capacity: (50)</button>
+                <div id="fuelCap">keepertext11</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="enerEffBtn">Energy Efficiency: (100)</button>
+                <div id="enerEff">keepertext</div>
+            </div>
+            <div class="upgrade-option">
+                <button id="enerCapBtn">Energy Capacity: (50)</button>
+                <div id="enerCap">keepertext</div>
+            </div>
         </div>
         <button id="closeUpgradesBtn">Close</button>
     </div>
@@ -88,9 +119,11 @@
     <div id="travel-window" class="game-container">
         <h2>Travel</h2>
         <div class="inline-text" id="resources2">
-            <div id="currency">Currency: 0</div>
-            <div id="fuel">Fuel: 0</div>
-            <div id="energy">Energy: 0</div>
+            <div class="resource-container">
+                <div id="currency">Currency: 0</div>
+                <div id="fuel">Fuel: 0</div>
+                <div id="energy">Energy: 0</div>
+            </div>
         </div>
         <div class="upgrade-row">
             <button id="earthBtn">Travel to Earth</button>
@@ -100,6 +133,19 @@
         </div>
         <button id="closeTravelBtn">Close</button>
     </div>
+
+    <div id="rebirth-window" class="game-container">
+        <h2>Rebirth</h2>
+        <div class="inline-text" id="resources2">
+            <div class="resource-container">
+                <div id="currency">Currency: 0</div>
+                <div id="fuel">Fuel: 0</div>
+                <div id="energy">Energy: 0</div>
+            </div>
+        </div>
+        <button id="closeRebirthBtn">Close</button>
+    </div>
+
     <script src="Game/script.js"></script>
 </body>
 
