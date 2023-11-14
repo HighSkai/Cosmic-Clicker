@@ -117,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let enerMulti = 1;
     let currMulti = 1;
 
+    let fuelMultiStats = 1;
+    let enerMultiStats = 1;
     let currMultiStats = 1;
 
     //upgrade costs
@@ -227,12 +229,18 @@ document.addEventListener('DOMContentLoaded', function () {
             currency -= fuelEffUpgrade;
             fuelEffUpgrade *= 1.5;
             fuelMulti *= 1.2;
+            fuelMultiStats *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
 
             // Update the display of the upgrade price
             const fuelEffBtnText = document.getElementById('fuelEffBtn');
+            const fuelMultiDisplay = document.getElementById('fuelMulti');
+            const fuelMultiDisplayStats = document.getElementById('fuelMultiStats');
+
             fuelEffBtnText.textContent = `Fuel Efficiency: (${fuelEffUpgrade.toFixed(0)})`;
+            fuelMultiDisplay.textContent = `Multiplier: (${fuelMulti.toFixed(0)})`;
+            fuelMultiDisplayStats.textContent = `Multiplier: (${fuelMultiStats.toFixed(0)})`;
         }
     });
 
@@ -244,9 +252,12 @@ document.addEventListener('DOMContentLoaded', function () {
             updateWindowValues(upgradesContainer);
             updateResources();
 
-            // Update the display of the upgrade price
+
             const fuelCapBtnText = document.getElementById('fuelCapBtn');
+            const fuelCapDisplay = document.getElementById('fuelCap');
+
             fuelCapBtnText.textContent = `Fuel Capacity: (${fuelCapUpgrade.toFixed(0)})`;
+            fuelCapDisplay.textContent = `Fuel Cap: (${fuelCap.toFixed(0)})`;
         }
     });
 
@@ -255,12 +266,17 @@ document.addEventListener('DOMContentLoaded', function () {
             currency -= enerEffUpgrade;
             enerEffUpgrade *= 1.5;
             enerMulti *= 1.2;
+            enerMultiStats *= 1.2;
             updateWindowValues(upgradesContainer);
             updateResources();
 
-            // Update the display of the upgrade price
             const enerEffBtnText = document.getElementById('enerEffBtn');
+            const enerEffDisplay = document.getElementById(`enerMulti`);
+            const enerEffDisplayStats = document.getElementById(`enerMultiStats`);
+
             enerEffBtnText.textContent = `Energy Efficiency: (${enerEffUpgrade.toFixed(0)})`;
+            enerEffDisplay.textContent = `Multiplier: (${enerMulti.toFixed(0)})`;
+            enerEffDisplayStats.textContent = `Multiplier: (${enerMultiStats.toFixed(0)})`;
         }
     });
 
@@ -272,9 +288,11 @@ document.addEventListener('DOMContentLoaded', function () {
             updateWindowValues(upgradesContainer);
             updateResources();
 
-            // Update the display of the upgrade price
             const enerCapBtnText = document.getElementById('enerCapBtn');
+            const enerCapDisplay = document.getElementById('enerCap');
+
             enerCapBtnText.textContent = `Energy Capacity: (${enerCapUpgrade.toFixed(0)})`;
+            enerCapDisplay.textContent = `Energy Cap: (${fuelCap.toFixed(0)})`;
         }
     });
 
