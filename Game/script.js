@@ -99,6 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
         energyElement.textContent = `Energy: ${energy.toFixed(1)}`;
     }
 
+    function updateAllWindowValues() {
+        updateWindowValues(settingsContainer);
+        updateWindowValues(upgradesContainer);
+        updateWindowValues(travelContainer);
+    }
+
     let fuel = 0;
     let energy = 0;
     let currency = 0;
@@ -110,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let fuelMulti = 1;
     let enerMulti = 1;
     let currMulti = 1;
+
+    let currMultiStats = 1;
 
     //upgrade costs
     let autoClickInterval = 1000;
@@ -152,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
         energy += enerClickVal * enerMulti;
         currency += currClickVal * currMulti;
         updateResources();
+        updateAllWindowValues();
     });
 
 
@@ -161,15 +170,18 @@ document.addEventListener('DOMContentLoaded', function () {
             currency -= currMultiUpgrade;
             currMultiUpgrade *= 1.2;
             currMulti += 0.5;
+            currMultiStats += 0.5;
             updateWindowValues(upgradesContainer);
             updateResources();
 
             // Update the display of the currency multiplier
             const currMultiDisplay = document.getElementById('currMulti');
             const currMultiBtnText = document.getElementById('currMultiBtn');
+            const currMultiDisplayStats = document.getElementById('currMultiStats');
 
             currMultiBtnText.textContent = `Currency Multiplier: (${currMultiUpgrade.toFixed(0)})`;
             currMultiDisplay.textContent = `Multiplier: ${currMulti.toFixed(1)}x`;
+            currMultiDisplayStats.textContent = `Currency: ${currMultiStats.toFixed(1)}x`;
         }
     });
 
@@ -177,6 +189,8 @@ document.addEventListener('DOMContentLoaded', function () {
     autoClickBtn.addEventListener('click', () => {
         if (currency >= 1000) {
             currency -= 1000;
+            autoClickBtn.disabled = true;
+            autoClickBtn.style.backgroundColor = 'gray';
             autoClick();
             updateWindowValues(upgradesContainer);
             updateResources();
