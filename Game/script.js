@@ -158,8 +158,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     clickBtn.addEventListener('click', () => {
-        fuel += fuelClickVal * fuelMulti;
-        energy += enerClickVal * enerMulti;
+        if (fuel + fuelClickVal <= fuelCap) {
+            fuel += fuelClickVal * fuelMulti;
+            energy += enerClickVal * enerMulti;
+        }
         currency += currClickVal * currMulti;
         updateResources();
         updateAllWindowValues();

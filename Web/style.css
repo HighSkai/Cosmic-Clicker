@@ -159,6 +159,19 @@ button {
     box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
 }
 
+button2 {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background-color: #2196f3;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2); 
+    box-sizing: 120px; 
+}
+
 button:hover {
     background-color: #1565c0;
 }
